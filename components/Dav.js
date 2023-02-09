@@ -6,51 +6,31 @@ import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
 export function Dav(props) {
-  const { nodes, materials } = useGLTF("/3D ROANO.gltf");
+  const { nodes, materials } = useGLTF("/4D PEDRO VICENTE.gltf");
   return (
     <group {...props} dispose={null}>
-      <group position={[0, 0.04, 0.18]} rotation={[-Math.PI, 0, -Math.PI]}>
+      <group position={[0, 0.14, 0]} rotation={[0, -1.57, 0]}>
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom"].geometry}
-          material={materials.TQ_ARD_front}
+          geometry={nodes["tq2_ARD-geom002"].geometry}
+          material={materials["tq2_ARD_front.002"]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom_1"].geometry}
-          material={materials.TQ_ARD_back}
+          geometry={nodes["tq2_ARD-geom002_1"].geometry}
+          material={materials["tq2_ARD_back.002"]}
         />
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes["TQ_ARD-geom_2"].geometry}
-          material={materials.TQ_ARD_edge}
-        />
-      </group>
-      <group position={[0.13, 0.1, -0.17]} rotation={[-Math.PI, 0, -Math.PI]}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001"].geometry}
-          material={materials["TQ_ARD_back.001"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001_1"].geometry}
-          material={materials["back-dil"]}
-        />
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes["TQ_ARD-geom001_2"].geometry}
-          material={materials["TQ_ARD_edge.001"]}
+          geometry={nodes["tq2_ARD-geom002_2"].geometry}
+          material={materials["tq2_ARD_edge.002"]}
         />
       </group>
     </group>
   );
 }
 
-useGLTF.preload("/3D ROANO.gltf");
+useGLTF.preload("/4D PEDRO VICENTE.gltf");
